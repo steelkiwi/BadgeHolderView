@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BadgeHolderLayout">
+        <attr name="bhl_default_badge_background" format="color"/>
+        <attr name="bhl_badge_radius" format="dimension"/>
+        <attr name="bhl_text_font" format="string"/>
+        <attr name="bhl_text_size" format="dimension"/>
+        <attr name="bhl_text_color" format="color"/>
+    </declare-styleable>
+</resources>
