@@ -7,3 +7,12 @@
 /build
 /captures
 .externalNativeBuild
+gradle/
+.idea/
+*.orig
+*.txt
+gradlew
+gradlew.bat
+gradle.properties
+*.log
+/key
