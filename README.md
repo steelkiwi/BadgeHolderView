@@ -1,4 +1,4 @@
-# Badge Holder View
+# BadgeHolderView
 
 [![Made in SteelKiwi](https://github.com/steelkiwi/IncrementProductView/blob/master/assets/made_in_steelkiwi.png)](http://steelkiwi.com/blog/)
 [ ![Download](https://api.bintray.com/packages/soulyaroslav/maven/badge-holder-view/images/download.svg) ](https://bintray.com/soulyaroslav/maven/badge-holder-view/_latestVersion)
