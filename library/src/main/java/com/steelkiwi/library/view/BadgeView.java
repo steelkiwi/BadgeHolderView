@@ -167,6 +167,20 @@ public class BadgeView extends View {
         invalidate();
     }
 
+    public void setCountWithAnimation(final int count) {
+        setNextBadgeCount(count);
+        countDrawable.setBadgeCount(getCurrentBadgeCount(), getNextBadgeCount());
+        invalidate();
+        // animate count drawable
+        if(getCurrentBadgeCount() > count) {
+            // animate count drawable when user increment more than one points
+            incrementWith();
+        } else {
+            // animate count drawable when user decrement more than one points
+           decrementWith();
+        }
+    }
+
     public void reset() {
         setCurrentBadgeCount(0);
         setNextBadgeCount(getCurrentBadgeCount() + 1);
@@ -176,6 +190,48 @@ public class BadgeView extends View {
 
     public int getCount() {
         return getCurrentBadgeCount();
+    }
+
+    private void incrementWith() {
+        if(isAnimationFinish() && getCurrentBadgeCount() > 0) {
+            setAnimationFinish(false);
+            // check where is need draw next count
+            countDrawable.setIncrement(false);
+            // animate drawable
+            scrollDrawableAnimation(0, -getHeight(), Constants.DURATION_500)
+                    .addListener(new AnimatorListenerAdapter() {
+
+                        @Override
+                        public void onAnimationEnd(Animator animation) {
+                            setCurrentBadgeCount(getNextBadgeCount());
+                            countDrawable.setCurrentCount(getCurrentBadgeCount());
+                            setUpdateWhenIncrement(true);
+                            setAnimationFinish(true);
+                            invalidate();
+                        }
+                    });
+        }
+    }
+
+    private void decrementWith() {
+        if(isAnimationFinish()) {
+            setAnimationFinish(false);
+            // check where is need draw next count text
+            countDrawable.setIncrement(true);
+            // animate drawable
+            scrollDrawableAnimation(0, getHeight(), Constants.DURATION_500)
+                    .addListener(new AnimatorListenerAdapter() {
+
+                        @Override
+                        public void onAnimationEnd(Animator animation) {
+                            setCurrentBadgeCount(getNextBadgeCount());
+                            countDrawable.setCurrentCount(getCurrentBadgeCount());
+                            setUpdateWhenIncrement(true);
+                            setAnimationFinish(true);
+                            invalidate();
+                        }
+                    });
+        }
     }
 
     private ValueAnimator scrollDrawableAnimation(int start, int end, long duration) {

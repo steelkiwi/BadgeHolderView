@@ -34,8 +34,7 @@
         app:bhl_default_badge_background="@color/color3"
         app:bhl_text_color="@android:color/white"
         app:bhl_text_size="12sp"
-        app:bhl_badge_radius="10dp"
-        app:bhl_text_font="Pacifico.ttf">
+        app:bhl_badge_radius="10dp">
 
         <ImageView
             android:layout_width="wrap_content"

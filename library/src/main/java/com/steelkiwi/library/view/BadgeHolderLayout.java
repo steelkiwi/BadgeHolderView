@@ -161,6 +161,11 @@ public class BadgeHolderLayout extends ViewGroup implements BadgeCounter {
     }
 
     @Override
+    public void setCountWithAnimation(int count) {
+        badgeView.setCountWithAnimation(count);
+    }
+
+    @Override
     public void reset() {
         badgeView.reset();
     }

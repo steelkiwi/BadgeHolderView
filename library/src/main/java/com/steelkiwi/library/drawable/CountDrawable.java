@@ -110,4 +110,8 @@ public class CountDrawable extends Drawable {
         }
         textPaint.setTypeface(Typeface.create(typeface, Typeface.BOLD));
     }
+
+    public void setCurrentCount(int currentCount) {
+        this.currentCount = currentCount;
+    }
 }

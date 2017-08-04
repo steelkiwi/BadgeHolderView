@@ -9,6 +9,7 @@ public interface BadgeCounter {
     void decrement();
     void setBadgeBackground(int color);
     void setCount(int count);
+    void setCountWithAnimation(int count);
     void reset();
     int getCount();
 }
