@@ -18,7 +18,7 @@ For project API 21+.
 ## Gradle
 
 ```gradle
-compile 'com.steelkiwi:badge-holder-view:1.0.0'
+compile 'com.steelkiwi:badge-holder-view:1.1.0'
 ```
 
 # Usage
@@ -55,10 +55,11 @@ You can customize view, through this attributes
 You can interact with BadgeHolderView through interface below
 
 ```java
-    void increment(); // increment badge count
-    void decrement(); // decrement badge count
+    void increment(); // increment badge count with animation
+    void decrement(); // decrement badge count with animation
     void setBadgeBackground(int color); // set badge background color if need
     void setCount(int count); // set start count of the badge
+    void setCountWithAnimation(int count); // set count value with animation
     void reset(); // reset badge count
     int getCount(); // get current badge count
 ```
