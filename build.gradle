@@ -27,6 +27,6 @@ ext {
     groupId = 'com.steelkiwi'
     uploadName = 'badge-holder-view'
     description = 'ViewGroup for browse badge view with count of some products'
-    publishVersion = '1.0.0'
+    publishVersion = '1.1.0'
     licences = ['Apache-2.0']
 }
